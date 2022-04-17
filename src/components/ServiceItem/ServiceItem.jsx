@@ -9,7 +9,7 @@ const ServiceItem = ({ service: { img, desc, name, price } }) => {
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
-            <h5>Price: ${price}</h5>
+            <h4>Price: ${price}</h4>
             {desc}
           </Card.Text>
           <Button variant="primary d-block mx-auto">Book Now</Button>

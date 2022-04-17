@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import HeroArea from "../HeroArea/HeroArea";
 import "./BrandHeader.css";
 
@@ -16,19 +17,27 @@ const BrandHeader = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <Link className="nav-link mx-3" to="/">
+                Home
+              </Link>
+              {/* <Link className="nav-link" to="/login">
+                Log In
+              </Link>
+              <Link className="nav-link" to="/signup">
+                Sign Up
+              </Link> */}
               <div>
-                <button className="btn Brand text-light border border-light">
+                <Link
+                  to="/signup"
+                  className="btn Brand text-light border border-light"
+                >
                   SIGN UP/IN
-                </button>
+                </Link>
               </div>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <HeroArea />
     </div>
   );
 };
