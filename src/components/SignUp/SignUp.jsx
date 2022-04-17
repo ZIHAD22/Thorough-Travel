@@ -15,7 +15,7 @@ const SignUp = () => {
   const { handleInputBlur, name, email, password, confirmPassword, agree } =
     useInputValue();
 
-  // handle custom email and password login
+  // handle custom email and password sign up
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
@@ -31,6 +31,7 @@ const SignUp = () => {
         }
       }
     }
+
     if (error) {
       return toast.warning(error.message);
     }
@@ -38,10 +39,6 @@ const SignUp = () => {
       return toast.success("Sign Up Successful");
     }
   };
-
-  if (loading) {
-    return <Loading />;
-  }
   return (
     <div>
       <Container>

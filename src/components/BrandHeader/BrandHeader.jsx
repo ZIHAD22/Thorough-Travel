@@ -3,6 +3,7 @@ import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 import HeroArea from "../HeroArea/HeroArea";
@@ -12,6 +13,7 @@ const BrandHeader = () => {
   const [user] = useAuthState(auth);
   const handleLogOut = () => {
     signOut(auth);
+    toast.success("Log Out Successful");
   };
   return (
     <div>
