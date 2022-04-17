@@ -1,0 +1,29 @@
+[
+    {
+        "id":"1",
+        "name":"Lyon in love",
+        "rating":"4.5",
+        "img": "https://img.freepik.com/free-photo/aerial-view-lyon-from-top-notre-dame-de-fourviere_268835-887.jpg?t=st=1650209140~exp=1650209740~hmac=53085183297754dfa7192c2aa18962b3d97ec21d4547bede3e56d645ef0c1c44&w=900",
+        "price" : "1700",
+        "stray":"6 days and 5 night",
+        "desc":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem voluptates facere amet iusto, nobis alias enim necessitatibus adipisci dolores natus sit perspiciatis ducimus ipsum libero sunt laborum in ad voluptatibus exercitationem consequuntur?"
+    },
+    {
+        "id":"2",
+        "name":"Lyon in love",
+        "rating":"4.5",
+        "img": "https://img.freepik.com/free-photo/aerial-view-lyon-from-top-notre-dame-de-fourviere_268835-887.jpg?t=st=1650209140~exp=1650209740~hmac=53085183297754dfa7192c2aa18962b3d97ec21d4547bede3e56d645ef0c1c44&w=900",
+        "price" : "1700",
+        "stray":"6 days and 5 night",
+        "desc":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem voluptates facere amet iusto, nobis alias enim necessitatibus adipisci dolores natus sit perspiciatis ducimus ipsum libero sunt laborum in ad voluptatibus exercitationem consequuntur?"
+    },
+    {
+        "id":"3",
+        "name":"Lyon in love",
+        "rating":"4.5",
+        "img": "https://img.freepik.com/free-photo/aerial-view-lyon-from-top-notre-dame-de-fourviere_268835-887.jpg?t=st=1650209140~exp=1650209740~hmac=53085183297754dfa7192c2aa18962b3d97ec21d4547bede3e56d645ef0c1c44&w=900",
+        "price" : "1700",
+        "stray":"6 days and 5 night",
+        "desc":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem voluptates facere amet iusto, nobis alias enim necessitatibus adipisci dolores natus sit perspiciatis ducimus ipsum libero sunt laborum in ad voluptatibus exercitationem consequuntur?"
+    }
+]
