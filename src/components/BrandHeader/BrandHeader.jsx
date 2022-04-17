@@ -6,7 +6,7 @@ import "./BrandHeader.css";
 const BrandHeader = () => {
   return (
     <div>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar className="Brand" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#">ThoroughTravel</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -36,7 +36,7 @@ const BrandHeader = () => {
                   <NavDropdown.Item href="#action5">Japanese</NavDropdown.Item>
                 </NavDropdown>
                 <div>
-                  <button className="btn btn-dark border border-light">
+                  <button className="btn Brand text-light border border-light">
                     SIGN UP/IN
                   </button>
                 </div>
