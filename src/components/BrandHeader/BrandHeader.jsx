@@ -6,7 +6,7 @@ import "./BrandHeader.css";
 const BrandHeader = () => {
   return (
     <div>
-      <Navbar className="Brand" variant="dark" expand="lg">
+      <Navbar className="Brand" sticky="top" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#">ThoroughTravel</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
