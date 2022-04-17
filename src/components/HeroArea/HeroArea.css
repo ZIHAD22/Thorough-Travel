@@ -1,0 +1,14 @@
+.hero-area{
+    background-image: url("../../images/jungle.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.btn-bg{
+    background-color: #F56961 !important;
+    color: white !important;
+}
+.book-icon{
+    width: 22px;
+    height: 22px;
+}

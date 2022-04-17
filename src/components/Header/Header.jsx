@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import BrandHeader from "../BrandHeader/BrandHeader";
+import HeroArea from "../HeroArea/HeroArea";
 
 const Header = () => {
   return (
@@ -15,6 +16,7 @@ const Header = () => {
           </Nav>
         </Container>
       </Navbar>
+      <HeroArea />
     </div>
   );
 };
