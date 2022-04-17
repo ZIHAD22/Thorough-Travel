@@ -8,6 +8,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { ToastContainer, toast } from "react-toastify";
 import auth from "../../firebase.init";
 import "./SignUp.css";
+import Loading from "../Loading/Loading";
 
 const SignUp = () => {
   // handle input value
@@ -30,16 +31,17 @@ const SignUp = () => {
         }
       }
     }
+    if (error) {
+      return toast.warning(error.message);
+    }
+    if (user) {
+      return toast.success("Sign Up Successful");
+    }
   };
 
-  if (error) {
-    toast.warning(error.message);
+  if (loading) {
+    return <Loading />;
   }
-
-  if (user) {
-    toast.success("Sign Up Successful");
-  }
-
   return (
     <div>
       <Container>
