@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import trevaler from "../../images/traveler.png";
+import traveler from "../../images/traveler.png";
 import OptionalSignUp from "../OptionalSignUp/OptionalSignUp";
 const Login = () => {
   return (
@@ -9,7 +9,7 @@ const Login = () => {
       <Container>
         <Row className="">
           <Col xs={6} className="my-auto">
-            <img src={trevaler} alt="" />
+            <img src={traveler} alt="" />
           </Col>
           <Col xs={6} className="my-auto">
             <Form className="shadow p-5 mt-5 mb-5">
