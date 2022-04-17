@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import CustomLink from "../CustomLink/CustomLink";
 import HeroArea from "../HeroArea/HeroArea";
 import "./BrandHeader.css";
 
@@ -17,9 +18,9 @@ const BrandHeader = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Link className="nav-link mx-3" to="/">
+              <CustomLink className="nav-link mx-3" to="/">
                 Home
-              </Link>
+              </CustomLink>
               {/* <Link className="nav-link" to="/login">
                 Log In
               </Link>
@@ -27,12 +28,12 @@ const BrandHeader = () => {
                 Sign Up
               </Link> */}
               <div>
-                <Link
+                <CustomLink
                   to="/signup"
                   className="btn Brand text-light border border-light"
                 >
                   SIGN UP/IN
-                </Link>
+                </CustomLink>
               </div>
             </Nav>
           </Navbar.Collapse>
