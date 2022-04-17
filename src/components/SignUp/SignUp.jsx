@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import trevaler from "../../images/traveler.png";
 import "./SignUp.css";
 
@@ -41,6 +42,9 @@ const SignUp = () => {
                   label="Agree with our trams and condition"
                 />
               </Form.Group>
+              <div className="my-2">
+                Already have an account? <Link to="/login">Login here</Link>
+              </div>
               <Button
                 className="d-block mx-auto btn-color border-0"
                 variant="primary"
