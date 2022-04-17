@@ -1,11 +1,18 @@
+import { signOut } from "firebase/auth";
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 import HeroArea from "../HeroArea/HeroArea";
 import "./BrandHeader.css";
 
 const BrandHeader = () => {
+  const [user] = useAuthState(auth);
+  const handleLogOut = () => {
+    signOut(auth);
+  };
   return (
     <div>
       <Navbar className="Brand" sticky="top" variant="dark" expand="lg">
@@ -28,12 +35,21 @@ const BrandHeader = () => {
                 Sign Up
               </Link> */}
               <div>
-                <CustomLink
-                  to="/signup"
-                  className="btn Brand text-light border border-light"
-                >
-                  SIGN UP/IN
-                </CustomLink>
+                {user?.uid ? (
+                  <Button
+                    className="Brand text-light border border-light"
+                    onClick={handleLogOut}
+                  >
+                    Log Out
+                  </Button>
+                ) : (
+                  <CustomLink
+                    to="/signup"
+                    className="btn Brand text-light border border-light"
+                  >
+                    SIGN UP/IN
+                  </CustomLink>
+                )}
               </div>
             </Nav>
           </Navbar.Collapse>

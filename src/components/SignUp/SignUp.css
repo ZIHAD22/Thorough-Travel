@@ -1,7 +1,7 @@
 .btn-color{
-    background: #F56961;
+    background: #F56961 !important;
 }
 
 .btn-color:hover{
-    background-color: #F56961;
+    background-color: #F56961 !important;
 }
