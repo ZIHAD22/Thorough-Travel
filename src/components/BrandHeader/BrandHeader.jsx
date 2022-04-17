@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-// import { CurrencyDollarIcon } from "@heroicons/react/solid";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import HeroArea from "../HeroArea/HeroArea";
 import "./BrandHeader.css";
 
 const BrandHeader = () => {
@@ -12,39 +12,23 @@ const BrandHeader = () => {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
-              className="ms-auto my-2 my-lg-0"
+              className="ms-auto my-2 my-lg-0 text-center"
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <div className="d-flex align-items-center ">
-                <NavDropdown
-                  className="brand-text"
-                  title="Dollar"
-                  id="navbarScrollingDropdown"
-                >
-                  <NavDropdown.Item href="#action3">Dollar</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Europe</NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">Yen</NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown
-                  className="brand-text"
-                  title="English"
-                  id="navbarScrollingDropdown2"
-                >
-                  <NavDropdown.Item href="#action3">English</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">France</NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">Japanese</NavDropdown.Item>
-                </NavDropdown>
-                <div>
-                  <button className="btn Brand text-light border border-light">
-                    SIGN UP/IN
-                  </button>
-                </div>
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#features">Features</Nav.Link>
+              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <div>
+                <button className="btn Brand text-light border border-light">
+                  SIGN UP/IN
+                </button>
               </div>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <HeroArea />
     </div>
   );
 };
