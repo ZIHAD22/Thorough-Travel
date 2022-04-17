@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import trevaler from "../../images/traveler.png";
+import OptionalSignUp from "../OptionalSignUp/OptionalSignUp";
 import "./SignUp.css";
 
 const SignUp = () => {
@@ -39,19 +40,20 @@ const SignUp = () => {
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"
-                  label="Agree with our trams and condition"
+                  label="I Agree with the trams and condition"
                 />
               </Form.Group>
               <div className="my-2">
                 Already have an account? <Link to="/login">Login here</Link>
               </div>
               <Button
-                className="d-block mx-auto btn-color border-0"
+                className="d-block mx-auto btn-color border-0 w-50"
                 variant="primary"
                 type="submit"
               >
                 Sign Up
               </Button>
+              <OptionalSignUp />
             </Form>
           </Col>
         </Row>
