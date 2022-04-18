@@ -42,17 +42,14 @@ const Login = () => {
   // handle submit on login
   const handleSubmitLogin = (e) => {
     e.preventDefault();
+
     if (email && password) {
-      signInWithEmailAndPassword(email, password).then(() => {});
+      signInWithEmailAndPassword(email, password);
+      if (loginError.message) {
+        return toast.warning(loginError.message);
+      }
     } else {
       return toast.warn("Please Provide Email and Password");
-    }
-
-    if (loginError) {
-      toast.warning(loginError.message);
-    }
-
-    if (loginUser) {
     }
   };
 
