@@ -20,7 +20,10 @@ const ServiceItem = ({ service: { img, desc, name, price, id } }) => {
             <h4>Price: ${price}</h4>
             {desc.length > 200 ? desc.slice(0, 200) + "..." : desc}
           </Card.Text>
-          <Button onClick={handleBooking} variant="primary d-block mx-auto">
+          <Button
+            onClick={handleBooking}
+            variant="primary d-block mx-auto btn-color border-0"
+          >
             Book Now
           </Button>
         </Card.Body>

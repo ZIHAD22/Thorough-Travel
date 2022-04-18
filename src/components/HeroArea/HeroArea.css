@@ -13,3 +13,24 @@
     width: 22px;
     height: 22px;
 }
+
+/* mobile responsibe */
+
+@media screen and (max-width:688px) {
+    .hero-top{
+        order: 1;
+    }
+    .hero-bottom{
+        order: 0;
+    }
+    .btn-bg{
+        background-color: #F56961 !important;
+        color: white !important;
+        text-align: center;
+        margin: auto;
+        display: block;
+    }
+    .hero-text{
+        font-weight: bolder;
+    }
+}

@@ -9,17 +9,17 @@ const HeroArea = () => {
     <div className="hero-area">
       <Container>
         <Row>
-          <Col md={6} className="my-auto">
+          <Col md={6} className="my-auto hero-top">
             <h1>Travel Is The Best Habbet In The World</h1>
-            <p>
+            <p className="hero-text">
               Hi I am Zihad and your tour guide. You Can travel In any where
               that you want
             </p>
-            <a href="/" className="btn btn-bg">
+            <a href="/" className="btn btn-bg ">
               Book A Trip <TrendingUpIcon className="book-icon" />
             </a>
           </Col>
-          <Col md={6} className="my-auto">
+          <Col md={6} className="my-auto hero-bottom">
             <img className="w-100" src={traveler} alt="" />
           </Col>
         </Row>
