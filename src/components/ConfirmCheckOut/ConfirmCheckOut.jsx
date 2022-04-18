@@ -14,7 +14,7 @@ const ConfirmCheckOut = () => {
   return (
     <div className="d-flex justify-content-center align-items-center spinner-div">
       <div className="my-3">
-        <h1>Thank You For The Booking {name}</h1>
+        <h1 className="text-center">Thank You For The Booking {name}</h1>
         <Button
           onClick={hadnleConfimeCheckOut}
           className="mx-auto d-block"
