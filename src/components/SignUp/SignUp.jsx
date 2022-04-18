@@ -56,10 +56,10 @@ const SignUp = () => {
     <div>
       <Container>
         <Row className="">
-          <Col xs={6} className="my-auto">
-            <img src={traveler} alt="" />
+          <Col xs={12} md={12} lg={6} className="my-auto img-fluid text-center">
+            <img className="img-fluid" src={traveler} alt="" />
           </Col>
-          <Col xs={6} className="my-auto">
+          <Col xs={12} md={12} lg={6} className="my-auto">
             <Form
               onSubmit={handleSignUpSubmit}
               className="shadow p-5 mt-5 mb-5"

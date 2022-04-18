@@ -68,10 +68,10 @@ const Login = () => {
     <div>
       <Container>
         <Row className="">
-          <Col xs={6} className="my-auto">
-            <img src={traveler} alt="" />
+          <Col xs={12} md={12} lg={6} className="my-auto img-fluid text-center">
+            <img src={traveler} alt="" className="img-fluid" />
           </Col>
-          <Col xs={6} className="my-auto">
+          <Col xs={12} md={12} lg={6} className="my-auto">
             <Form className="shadow p-5 mt-5 mb-5" onSubmit={handleSubmitLogin}>
               <h2 className="text-center mb-3">Sign in</h2>
               <Form.Group className="mb-3" controlId="formBasicEmail">
