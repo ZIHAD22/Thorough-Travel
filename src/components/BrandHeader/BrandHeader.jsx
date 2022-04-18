@@ -30,6 +30,12 @@ const BrandHeader = () => {
               <CustomLink className="nav-link mx-3" to="/">
                 Home
               </CustomLink>
+              <CustomLink className="nav-link mx-3" to="/blogs">
+                Blogs
+              </CustomLink>
+              <CustomLink className="nav-link mx-3" to="/about">
+                About
+              </CustomLink>
               {/* <Link className="nav-link" to="/login">
                 Log In
               </Link>

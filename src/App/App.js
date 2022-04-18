@@ -12,6 +12,8 @@ import Checkout from '../components/Checkout/Checkout'
 import { ToastContainer } from 'react-toastify'
 import ConfirmCheckOut from '../components/ConfirmCheckOut/ConfirmCheckOut'
 import Testimonial from '../components/Testimonials/Testimonial'
+import Blogs from '../components/Blogs/Blogs'
+import About from '../components/About/About'
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/about" element={<About />} />
         <Route
           path="/checkout/:id"
           element={
