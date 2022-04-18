@@ -1,7 +1,13 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const ServiceItem = ({ service: { img, desc, name, price } }) => {
+  const navigate = useNavigate();
+  const handleBooking = (e) => {
+    e.preventDefault();
+    navigate("/checkout");
+  };
   return (
     <div className="col-md-4">
       <Card className="shadow-lg border rounded-3" style={{ width: "100%" }}>
@@ -14,7 +20,9 @@ const ServiceItem = ({ service: { img, desc, name, price } }) => {
             <h4>Price: ${price}</h4>
             {desc}
           </Card.Text>
-          <Button variant="primary d-block mx-auto">Book Now</Button>
+          <Button onClick={handleBooking} variant="primary d-block mx-auto">
+            Book Now
+          </Button>
         </Card.Body>
       </Card>
     </div>

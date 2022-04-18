@@ -6,7 +6,9 @@ import { Route, Routes } from 'react-router-dom'
 import Login from '../components/Login/Login'
 import SignUp from '../components/SignUp/SignUp'
 import HeroArea from '../components/HeroArea/HeroArea'
+import RequireAuth from '../components/RequireAuth/RequireAuth'
 import NotFound from '../components/NotFound/NotFound'
+import Checkout from '../components/Checkout/Checkout'
 
 function App() {
   return (
@@ -24,6 +26,16 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/checkout"
+          element={
+            <>
+              <RequireAuth>
+                <Checkout />
+              </RequireAuth>
+            </>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

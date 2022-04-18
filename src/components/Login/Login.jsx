@@ -1,15 +1,20 @@
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import traveler from "../../images/traveler.png";
 import useInputValue from "../../hooks/useInputvalue";
 import OptionalSignUp from "../OptionalSignUp/OptionalSignUp";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast, ToastContainer } from "react-toastify";
-import Loading from "../Loading/Loading";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  // authintication
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+
   // input values
   const { handleInputBlur, email, password } = useInputValue();
 
@@ -21,7 +26,9 @@ const Login = () => {
   const handleSubmitLogin = (e) => {
     e.preventDefault();
     if (email && password) {
-      signInWithEmailAndPassword(email, password);
+      signInWithEmailAndPassword(email, password).then(() => {
+        navigate(from, { replace: true });
+      });
     } else {
       return toast.warn("Please Provide Email and Password");
     }
@@ -67,6 +74,9 @@ const Login = () => {
                   onBlur={handleInputBlur}
                 />
               </Form.Group>
+              <div className="mt-2 mb-3">
+                Not Sign Up? <Link to="/signup">Sign Up here</Link>
+              </div>
               <Button
                 className="d-block mx-auto btn-color border-0 w-50"
                 variant="primary"
