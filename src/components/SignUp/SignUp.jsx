@@ -17,7 +17,9 @@ const SignUp = () => {
 
   // handle custom email and password sign up
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, {
+      sendEmailVerification: true,
+    });
 
   // handle submit
   const handleSignUpSubmit = async (e) => {

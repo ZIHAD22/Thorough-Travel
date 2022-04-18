@@ -6,6 +6,8 @@ const useInputValue = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    address: "",
+    phoneNumber: "",
     agree: false,
   });
 
@@ -22,6 +24,8 @@ const useInputValue = () => {
   return {
     name: inputValue.name,
     email: inputValue.email,
+    phoneNumber: inputValue.phoneNumber,
+    address: inputValue.address,
     password: inputValue.password,
     confirmPassword: inputValue.confirmPassword,
     agree: inputValue.agree,

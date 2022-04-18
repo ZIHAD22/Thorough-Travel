@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import traveler from "../../images/traveler.png";
 import useInputValue from "../../hooks/useInputvalue";
 import OptionalSignUp from "../OptionalSignUp/OptionalSignUp";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import Loading from "../Loading/Loading";
 import { toast, ToastContainer } from "react-toastify";
+import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { async } from "@firebase/util";
 
 const Login = () => {
+  // reset password
+  const [resetPassword, setResetPassword] = useState("");
+  const [sendPasswordResetEmail, sending, resetPasswrodError] =
+    useSendPasswordResetEmail(auth);
+
   // authintication
   let navigate = useNavigate();
   let location = useLocation();
@@ -22,13 +30,20 @@ const Login = () => {
   const [signInWithEmailAndPassword, loginUser, loading, loginError] =
     useSignInWithEmailAndPassword(auth);
 
+  if (loading || sending) {
+    return <Loading />;
+  }
+
+  if (loginUser) {
+    navigate(from, { replace: true });
+    return toast.success("Login Successful");
+  }
+
   // handle submit on login
   const handleSubmitLogin = (e) => {
     e.preventDefault();
     if (email && password) {
-      signInWithEmailAndPassword(email, password).then(() => {
-        navigate(from, { replace: true });
-      });
+      signInWithEmailAndPassword(email, password).then(() => {});
     } else {
       return toast.warn("Please Provide Email and Password");
     }
@@ -38,7 +53,17 @@ const Login = () => {
     }
 
     if (loginUser) {
-      toast.success("Login Successful");
+    }
+  };
+
+  // handle password reset
+  const handlePsswordReset = async (e) => {
+    e.preventDefault();
+    if (email) {
+      await sendPasswordResetEmail(email);
+      return toast.success("Password Reset Email Send");
+    } else {
+      return toast.warning("Please Provide Your Email");
     }
   };
 
@@ -74,8 +99,15 @@ const Login = () => {
                   onBlur={handleInputBlur}
                 />
               </Form.Group>
-              <div className="mt-2 mb-3">
-                Not Sign Up? <Link to="/signup">Sign Up here</Link>
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="mt-2 mb-3">
+                  Not Sign Up? <Link to="/signup">Sign Up here</Link>
+                </div>
+                <div className="mt-2 mb-3">
+                  <Button onClick={handlePsswordReset} variant="link">
+                    Forget Password?
+                  </Button>
+                </div>
               </div>
               <Button
                 className="d-block mx-auto btn-color border-0 w-50"

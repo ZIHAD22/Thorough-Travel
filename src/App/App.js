@@ -10,6 +10,7 @@ import RequireAuth from '../components/RequireAuth/RequireAuth'
 import NotFound from '../components/NotFound/NotFound'
 import Checkout from '../components/Checkout/Checkout'
 import { ToastContainer } from 'react-toastify'
+import ConfirmCheckOut from '../components/ConfirmCheckOut/ConfirmCheckOut'
 
 function App() {
   return (
@@ -28,11 +29,21 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route
-          path="/checkout"
+          path="/checkout/:id"
           element={
             <>
               <RequireAuth>
                 <Checkout />
+              </RequireAuth>
+            </>
+          }
+        />
+        <Route
+          path="/checkout/confirm-checkout/:name"
+          element={
+            <>
+              <RequireAuth>
+                <ConfirmCheckOut />
               </RequireAuth>
             </>
           }
