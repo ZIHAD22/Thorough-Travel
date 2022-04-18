@@ -11,6 +11,7 @@ import NotFound from '../components/NotFound/NotFound'
 import Checkout from '../components/Checkout/Checkout'
 import { ToastContainer } from 'react-toastify'
 import ConfirmCheckOut from '../components/ConfirmCheckOut/ConfirmCheckOut'
+import Testimonial from '../components/Testimonials/Testimonial'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <>
               <HeroArea />
               <Services />
+              <Testimonial />
             </>
           }
         />
