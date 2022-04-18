@@ -9,6 +9,7 @@ import HeroArea from '../components/HeroArea/HeroArea'
 import RequireAuth from '../components/RequireAuth/RequireAuth'
 import NotFound from '../components/NotFound/NotFound'
 import Checkout from '../components/Checkout/Checkout'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   )
 }
