@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useInputValue from "../../hooks/useInputvalue";
 import traveler from "../../images/traveler.png";
 import OptionalSignUp from "../OptionalSignUp/OptionalSignUp";
@@ -15,11 +15,29 @@ const SignUp = () => {
   const { handleInputBlur, name, email, password, confirmPassword, agree } =
     useInputValue();
 
+  // authintication
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+
   // handle custom email and password sign up
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, {
       sendEmailVerification: true,
     });
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return toast.warning(error.message);
+  }
+  if (user) {
+    navigate(from, { replace: true });
+    return toast.success("Sign Up Successful");
+  }
 
   // handle submit
   const handleSignUpSubmit = async (e) => {
@@ -32,13 +50,6 @@ const SignUp = () => {
           toast.warn("Your Password and Confirm Password didn't match");
         }
       }
-    }
-
-    if (error) {
-      return toast.warning(error.message);
-    }
-    if (user) {
-      return toast.success("Sign Up Successful");
     }
   };
   return (
