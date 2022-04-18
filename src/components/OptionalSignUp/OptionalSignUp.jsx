@@ -1,11 +1,24 @@
 import React from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import google from "../../images/google.png";
 
 const OptionalSignUp = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
+
+  // authintication
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+
+  if (googleUser) {
+    navigate(from, { replace: true });
+    return toast.success("Login Successful");
+  }
 
   const googleLoginHandler = (e) => {
     e.preventDefault();
